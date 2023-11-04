@@ -16,3 +16,10 @@ csharp_indent_labels = one
 csharp_space_after_keywords_in_control_flow_statements = true
 csharp_space_between_parentheses = false
 csharp_space_between_empty_parameter_list_parentheses = false
+
+dotnet_naming_rule.interface_type = interface
+dotnet_naming_symbols.interface_type.applicable_kinds = interface
+dotnet_naming_symbols.interface_type.applicable_accessibilities = public, internal
+dotnet_naming_symbols.interface_type.required_modifiers = IS
+dotnet_naming_style.IS.capitalization = pascal_case
+dotnet_naming_style.IS.required_prefix = I
