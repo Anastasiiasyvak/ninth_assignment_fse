@@ -22,12 +22,12 @@ jobs:
       run: dotnet restore
 
     - name: Run tests and collect code coverage
-      run: |
-        dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
 
     - name: Publish code coverage results
-      uses: coverallsapp/github-action@v1
+      uses: actions/upload-artifact@v2
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        name: coverage-results
+        path: ./coverage-results
